@@ -12,7 +12,7 @@ from dotenv import load_dotenv
 
 app = FastAPI()
 load_dotenv()
-app.add_middleware(SessionMiddleware, secret_key="your-secret-key-here-change-in-production")
+app.add_middleware(SessionMiddleware, secret_key="xxxx")
 USERS_TABLE = os.getenv("USERS_TABLE", "users")
 
 def get_connection():
@@ -5938,3 +5938,4 @@ def monthly_user_comparison_data(request: Request):
     except Exception as e:
             import traceback
             return JSONResponse(content={"error": str(e), "traceback": traceback.format_exc()}, status_code=500)
+
